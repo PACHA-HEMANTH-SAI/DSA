@@ -3,15 +3,13 @@ class Solution {
         int i = 0;
         int j = 0;
         long sum = 0;
-        double avg = 0;
-        double maxAvg = Integer.MIN_VALUE;
+        double max = Double.NEGATIVE_INFINITY;
 
         for(j = 0;j < k;j++) {
             sum += nums[j];
         }
 
-        avg = (double) sum / k;
-        maxAvg = Math.max(avg,maxAvg);
+        max = Math.max(sum,max);
 
         for(j = k; j < nums.length; j++) {
             sum -= nums[i];
@@ -19,10 +17,9 @@ class Solution {
 
             i++;
 
-            avg = (double) sum / k;
-            maxAvg = Math.max(avg,maxAvg);
+            max = Math.max(max,sum);
         }
 
-        return maxAvg;
+        return max / (double) k;
     }
 }
