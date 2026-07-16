@@ -8,18 +8,23 @@ class Solution {
 
         for(int i = 0;i < pattern.length();i++) {
             if(map.containsKey(pattern.charAt(i))) {
-                if(map.get(pattern.charAt(i)).equals(arr[i])) continue;
-                else return false;
+                if(!(map.get(pattern.charAt(i)).equals(arr[i]))) return false;
             }else {
+
+                if(set.contains(arr[i])) {
+                    return false;
+                }
+
                 map.put(pattern.charAt(i), arr[i]);
+                set.add(arr[i]);
             }
         }
 
-        for(var i : map.entrySet()) {
-            set.add(i.getValue());
-        }
+        // for(var i : map.entrySet()) {
+        //     set.add(i.getValue());
+        // }
 
-        if(set.size() != map.size()) return false;
+        // if(set.size() != map.size()) return false;
         return true;
     }
 }
