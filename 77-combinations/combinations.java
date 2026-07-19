@@ -18,7 +18,7 @@ class Solution {
             return;
         }
 
-        if((list.size() + n - ind) >= k) generateCombinations(n, ind + 1, k, list, l);
+        if((l.size() + n - ind) >= k) generateCombinations(n, ind + 1, k, list, l);
         l.add(ind);
         generateCombinations(n, ind + 1, k, list, l);
         l.remove(l.size() - 1);
