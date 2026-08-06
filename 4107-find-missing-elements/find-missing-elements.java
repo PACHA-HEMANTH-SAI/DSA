@@ -1,6 +1,5 @@
 class Solution {
     public List<Integer> findMissingElements(int[] nums) {
-        Arrays.sort(nums);
         ArrayList<Integer> ans = new ArrayList<>();
         HashSet<Integer> set = new HashSet<>();
         int min = Integer.MAX_VALUE;
@@ -17,7 +16,6 @@ class Solution {
             ans.add(i);
         }
 
-        Collections.sort(ans);
         return ans;
     }
 }
